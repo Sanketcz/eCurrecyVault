@@ -1,0 +1,427 @@
+/*-----------------------------------------Root----------------------------------------------*/
+:root{
+	--mcolor1:#eb3461;
+	--mcolor2:#3ebdf0;
+}
+/*----------------------------------------Index.jsp------------------------------------------*/
+#index-body{
+    height: 100vh;
+	background-color: #02070d;
+}
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.logo{
+    position: absolute;
+    font-family: 'Kalam', cursive;
+    color: whitesmoke;
+    top: 10px;
+    left: 10px;
+}
+.logotxt{
+	background: -webkit-linear-gradient(-180deg,var(--mcolor1), var(--mcolor2));
+ 	 -webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+
+	font-family: 'Kalam', cursive;
+	cursor: pointer;
+	z-index: 1;
+}
+.menu{
+	visibility: hidden;
+	transition: 0.5s;
+    transition-timing-function: ease-in-out;
+	transform: scaleX(0);
+}
+.logo::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(-90deg,var(--mcolor1),var(--mcolor2));
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+}
+.logo:hover::after{
+    transform: scaleX(1);
+}
+.logo:hover .menu{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 270px;
+    height: 100vh;
+	transform: scaleX(1);
+	z-index: 0;
+	border-radius:0 5% 5% 0;
+	visibility: visible;
+
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	background-color: rgba(255, 255, 255, 0.06);
+}
+.menulinks{
+	position: absolute;
+	top: 100px;
+	left: 10px;
+}
+.menulinks i{
+	background: -webkit-linear-gradient(-180deg,var(--mcolor1),var(--mcolor2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*-----------------------------------Login and Register------------------------------*/
+#loginForm{
+	display: none;
+}
+#logForm{
+	position: relative;
+    color: white;
+    left: 44%;
+	top:10px;
+    cursor: pointer;
+    width: 15%;
+}
+#regForm{
+	position: relative;
+    color: white;
+    left: 44%;
+    cursor: pointer;
+    width: 15%;
+	top:10px;
+}
+.box {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 45%;
+	left: 50%;
+}
+.container {
+	width: 400px;
+    height: 475px;
+}
+.blur-panel {
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	padding: 50px 25px;
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	border: 1.5px solid rgba(255, 255, 255, 0.06);
+	border-radius: 8px;
+}
+/*------------------------------------inputs and labels-------------------------------*/
+.input-container .lbl{
+	position:relative;
+	top:-30px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+	transition: all 0.5s ease-in-out;
+}
+.input-container .ip{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container .ip:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid var(--mcolor2);
+}
+.input-container .ip:focus ~ .lbl,
+.input-container .ip:valid ~ .lbl{
+	top:-50px;
+	font-size:12px;
+	
+}
+.headtxt{
+	color: #fff9;
+}
+.regbtn{
+	position: relative;
+	width: 50%;
+	left: 25%;
+	background:linear-gradient(-90deg,var(--mcolor1),var(--mcolor2));
+	border: none;
+	color: white;
+
+}
+.regbtn:hover{
+	background:linear-gradient(90deg,var(--mcolor1),var(--mcolor2));
+}
+/*------------------------------------Shapes------------------------------------------*/
+.shape1 {
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	background: linear-gradient(135deg, #ff5b84, #eb3461);
+	border-radius: 10% 25%;
+	bottom: 25px;
+	right: -70px;
+	z-index: -1;
+}
+.shape2 {
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	background: linear-gradient(135deg, #426cf8, #3ebdf0);
+	border-radius: 50%;
+	top: 30px;
+	left: -75px;
+	z-index: -1;
+}
+.shape3 {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	background: linear-gradient(135deg, #426cf8, #3ebdf0);
+	border-radius: 50%;
+	top: 10px;
+	left: -105px;
+	z-index: -1;
+}
+.shape4 {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    background: linear-gradient(135deg, #ff5b84, #eb3461);
+    border-radius: 10% 25%;
+    bottom: -55px;
+    right: -145px;
+    z-index: -1;
+}
+
+/*----------------------------------Main Menu----------------------------------------*/
+.showBalance{
+	color: white;
+	text-align: center;
+	height: 45px;
+	width: 75%;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+	right: 80px;
+    top: 10px;
+}
+
+.depositMoney{
+	color: white;
+	text-align: center;
+	height: 45px;
+	cursor: pointer;
+	width: 80%;border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+	left: 165px;
+    top: 45px;
+}
+
+.withdrawMoney{
+	color: white;
+	text-align: center;
+	height: 45px;
+	width: 90%;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+	right: 125px;
+    top: 80px;
+}
+
+.changePassword{
+	color: white;
+	text-align: center;
+	height: 45px;
+	width: 90%;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+	left: 165px;
+    top: 110px;
+}
+.usernm{
+	position: absolute;
+	bottom: 10px;
+	color: #fff9;
+}
+/*-----------------------------------Menu Hover Div Display------------------------------------------*/
+.showBalance:hover{
+	height: 46px;
+	width: 80%;
+	right: 100px;
+
+	transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.sbaldiv{
+	position: absolute;
+	display: none;
+	height: 200px;
+    width: 350px;
+    z-index: 1;
+    left: -400px;
+    top: -70px;
+	border-radius: 5px;
+
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+}
+.showBalance:hover .sbaldiv{
+	display: block;
+	
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.depositMoney:hover{
+	height: 46px;
+	width: 90%;
+
+	transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.dmnydiv{
+	position: absolute;
+	display: none;
+	height: 200px;
+    width: 350px;
+    z-index: 1;
+    right: -370px;
+    top: -70px;
+	border-radius: 5px;
+
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+}
+.depositMoney:hover .dmnydiv{
+	display: block;
+	
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.withdrawMoney:hover{
+	height: 46px;
+	width: 95%;
+	right: 140px;
+
+	transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.wmnydiv{
+	position: absolute;
+	display: none;
+	height: 200px;
+    width: 350px;
+    z-index: 1;
+    left: -365px;
+    top: -70px;
+	border-radius: 5px;
+
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+}
+.withdrawMoney:hover .wmnydiv{
+	display: block;
+	
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.changePassword:hover{
+	height: 46px;
+	width: 95%;
+	right: 140px;
+
+	transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.chpsdiv{
+	position: absolute;
+	display: none;
+	height: 200px;
+    width: 350px;
+    z-index: 1;
+    right: -360px;
+    top: -70px;
+	border-radius: 5px;
+
+	background-color: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(15px);
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+}
+.changePassword:hover .chpsdiv{
+	display: block;
+	
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+/*----------------------inside div--------------------------*/
+.sbaldiv .divinhead{
+	position: relative;
+	top: 10%;
+}
+.accbalamt{
+	position: relative;
+	top: 20%;
+}
+.dmnydiv .divinhead{
+	position: relative;
+	top: 10%;
+}
+.inpdivin{
+	position: absolute;
+    top: 30%;
+    left: 12%;
+}
+.btndivin{
+	position: absolute;
+    width: 50%;
+    left: 25%;
+    top: 60%;
+    background: linear-gradient(-90deg,var(--mcolor1),var(--mcolor2));
+    border: none;
+    color: white;
+}
+.wmnydiv .divinhead{
+	position: relative;
+	top: 10%;
+}
